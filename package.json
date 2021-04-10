@@ -1,0 +1,12 @@
+{
+  "name": "NaturalTheme",
+  "version": "prototype",
+  "description": "A simplistic theme which highlights the beautiful interactions between Josefin Sans and Computer Modern.",
+  "license": "MIT",
+  "scripts" : {
+    "build": "node_modules/.bin/sass theme.scss:dist/natural-theme.css --no-source-map"
+  },
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}
