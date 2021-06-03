@@ -4,7 +4,9 @@
   "description": "A simplistic theme which highlights the beautiful interactions between Josefin Sans and Computer Modern.",
   "license": "MIT",
   "scripts" : {
-    "build": "node_modules/.bin/sass theme.scss:dist/natural-theme.css --no-source-map"
+    "compile": "node_modules/.bin/sass scss/theme.scss:dist/natural-theme.css --no-source-map --style=compressed",
+    "dev": "node_modules/.bin/sass scss/theme.scss:dist/natural-theme.css",
+    "watch": "node_modules/.bin/sass scss/theme.scss:dist/natural-theme.css --no-source-map--update --watch"
   },
   "dependencies": {
     "sass": "^1.32.8"

@@ -1,0 +1,30 @@
+table {
+    border-top: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    padding: 0 1rem;
+    margin: 0 1rem;
+    margin-bottom: 2rem;
+
+    & thead {
+         border-bottom: 1px solid #bbb;
+    }
+
+    & thead, & tbody {
+        & tr {
+            &:not(:last-child) {
+                border-bottom: 1px solid #eee;
+                padding: 0 .5rem;
+                margin: 0 .5rem;
+            }
+
+            & th, & td {
+                &:not(:first-child) {
+                    text-align: center;
+                }
+
+                font-weight: unset;
+            }
+
+        }
+    }
+}

@@ -1,5 +1,10 @@
-:roo {
+@import "typeface";
+@import "lists";
+@import "table";
+
+:root {
 	--primary-color: #2875d9;
+    --mermaid-theme:neutral;
 }
 
 * {
@@ -9,6 +14,19 @@
 html, body, #write {
 	font-family: 'C059';
 }
+
+b, strong {
+	font-family: 'C059 Bold';
+
+    & i, i & {
+	    font-family: 'C059 Italic Bold';
+    }
+}
+
+i {
+	font-family: 'C059 Italic';
+}
+
 
 box {
     display: block;
@@ -20,40 +38,45 @@ box,  inline-box {
 }
 
 
-article {
-    & h1, & h2, & h3, & h4, & h5, & h6 {
-        p + & {
-            margin-top: 2rem;
-        }
-    }
-}
-
 h1, h2, h3, h4, h5, h6 {
+    table + &, p + & {
+        margin-top: 2rem;
+    }
+
     margin: 0;
     padding: 0;
-    font-family: "Josefin Sans";
     text-align: left !important;
+    font-family: "Josefin Sans";
+
 }
 
 
-h1 { font-size: 2rem; }
+h1 { font-size: 2.4rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.6rem; }
 h4 { font-size: 1.4rem; }
 h5 { font-size: 1.2rem; }
 h6 { font-size: 1rem; }
 
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: 650;
+}
+
 h3, h4, h5, h6 {
-    font-weight: normal; 
+    font-weight: 500;
 }
 
 html, body, #write {
 	font-size: 1rem;
-	text-align: justify;
 	display: block;
 }
 
-p {
+span, p {
+	text-align: justify;
     line-height: 1.75rem;
 }
 
@@ -73,9 +96,10 @@ body {
 #write {
     background-color: white;
     box-shadow: 0 1px 3px 1px rgba(60,64,67,.15);
+	// max-width: 33in;
 	max-width: 800px;
     padding-right: .75in;
-    padding-left: .625in;
+    padding-left: .75in;
     margin: auto;
 }
 
@@ -85,25 +109,7 @@ a {
 }
 
 
-/* Lists */
 
-ul, ol {
-    & li {
-        margin-bottom: .5rem;
-    }
-}
-
-.list-none + ul, .list-none + ol {
-    list-style-type: none;
-
-    & li {
-        & strong {
-            margin-right: .75rem;
-            margin-left: -2.25rem;
-            text-align: left;
-        }
-    }
-}
 
 /* Stuff */
 
@@ -119,8 +125,7 @@ code, .md-fences, .sourceCode {
 }
 
 code {
-    font-size: 10pt;
-    font-weight: bold;
+    font-size: 9pt;
 }
 
 .md-fences, pre.sourceCode {

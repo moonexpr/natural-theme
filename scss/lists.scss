@@ -1,0 +1,45 @@
+/* Lists */
+
+ul, ol {
+    & li {
+        margin-bottom: .5rem;
+    }
+}
+
+
+div {
+    &[data-emphasize="singular"] { & + ul, & + ol {
+        list-style-type: none;
+        margin-left: 1.5rem;
+
+        & li {
+            & strong:first-child {
+                margin-right: .25rem;
+                margin-left: -2.25rem;
+                text-align: left;
+
+                &:after {
+                    content: " \2013";
+                    margin-right: .25rem;
+                }
+            }
+        }
+    }}
+    &[emphasize=plural] { & + ul, & + ol {
+        list-style-type: none;
+    }}
+}
+
+/**
+ * Backways compadiblity
+ */
+
+.list-none + ul, .list-none + ol {
+    list-style-type: none;
+
+    & li strong {
+        margin-right: .75rem;
+        margin-left: -2.25rem;
+        text-align: left;
+    }
+}
